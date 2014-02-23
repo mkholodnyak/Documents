@@ -1,0 +1,170 @@
+\documentclass[a4paper,12pt]{report} % формат бумаги А4, шрифт по умолчанию - 12pt
+
+\usepackage[T2A]{fontenc} % поддержка кириллицы в Латехе
+\usepackage[utf8]{inputenc} % включаю кодировку ютф8
+\usepackage[english,russian]{babel} % использую русский и английский языки с переносами
+
+\usepackage{indentfirst} % делать отступ в начале параграфа
+\usepackage{amsmath} % математические штуковины
+\usepackage{mathtools} % еще математические штуковины
+\usepackage{mathtext}
+\usepackage{multicol} % подключаю мультиколоночность в тексте
+\usepackage{graphicx} % пакет для вставки графики, я хз нахуя он нужен в этом документе
+\usepackage{listings} % пакет для вставки кода
+
+
+\usepackage{geometry} % меняю поля страницы
+
+%из параметров ниже понятно, какие части полей страницы меняются:
+\geometry{left=2.5cm}
+\geometry{right=1cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\renewcommand{\baselinestretch}{1.5} % меняю ширину между строками на 1.5
+\righthyphenmin=2
+
+\begin{document}
+
+\begin{titlepage}
+\newpage
+
+\begin{center}
+{\large НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ \\
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ» 							\\
+Дисциплина: «Дискретная математика. Алгоритмический подход.»}
+
+\vfill % заполняет длину страницы вертикально
+
+{\large Домашнее задание 1}
+
+\bigskip
+
+\underline{Функции алгебры логики}\\
+Вариант 1
+
+\vfill
+
+\begin{flushright}
+Выполнил: Холодняк М.В.,\\
+студент группы 174ПИ.\medskip \\
+Преподаватель: Броневич А.Г.
+\end{flushright}
+
+\vfill
+
+Москва \number\year \\
+\LaTeX
+
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{center}
+Задание 1.\\
+\end{center}
+
+\begin{flushleft}
+
+Функция $F_1(X,Y,Z)$ ложна при $F_1(0,0,1)$\\
+Функция $F_2(X,Y,Z)$ ложна при $F_2(0,0,0), F_2(0,0,1)$\\
+Функция $F_3(X,Y,Z)$ ложна при $F_3(0,1,0), F_3(0,1,1), F_3(1,0,0), F_3(1,0,1), F_3(1,1,0), F_3(1,1,1)$\\
+
+\end{flushleft}
+
+\bigskip
+
+
+\begin{center}
+Задание  2.\\
+\end{center}
+
+\begin{flushleft}
+
+
+\end{flushleft}
+
+\bigskip
+
+       
+\begin{center}
+Задание 3.
+\end{center}
+
+\begin{flushleft}
+Дизъюнтивная нормальная форма:\\
+$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
+$F_2(X,Y,Z)=\overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
+$F_3(X,Y,Z)=\overline{XYZ} \vee \overline{XY}Z$\\
+\bigskip
+Конъюктивная нормальная форма:\\
+$F_1(X,Y,Z)=X \vee Y \vee \overline{Z}$\\
+$F_2(X,Y,Z)=(X\vee Y\vee Z)(X\vee Y\vee\overline{Z})$\\
+$F_3(X,Y,Z)=(X\vee \overline{Y}\vee Z)(X \vee \overline{Y} \vee \overline{Z})(\overline{X} \vee Y \vee Z)(\overline{X} \vee Y \vee \overline{Z})(\overline{X} \vee \overline{Y} \vee Z)(\overline{X} \vee \overline{Y} \vee \overline{Z})$\\
+\end{flushleft}
+
+\bigskip
+
+
+\begin{center}
+Задание 4.\\
+\end{center}
+
+\begin{flushleft}
+Полиномы Жегалкина:\\
+$F_1(X,Y,Z)=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$\\
+$F_2(X,Y,Z)=Y \oplus X \oplus XY$\\
+$F_3(X,Y,Z)=1 \oplus Y \oplus X \oplus XY$\\
+\end{flushleft}
+
+\bigskip
+
+\begin{center}
+Задание 5.\\
+\end{center}
+
+\begin{flushleft}
+
+\end{flushleft}
+
+\bigskip
+
+\begin{center}
+Задание 6.\\
+\end{center}
+
+\begin{flushleft}
+
+\end{flushleft}
+
+\bigskip
+
+\begin{center}
+Задание 7.\\
+\end{center}
+
+\begin{flushleft}
+
+\end{flushleft}
+
+\bigskip
+
+\begin{center}
+Задание 8.\\
+\end{center}
+
+\begin{flushleft}
+
+\end{flushleft}
+
+\bigskip
+
+\begin{center}
+Задание 9.\\
+\end{center}
+
+\begin{flushleft}
+
+\end{flushleft}
+\end{document}
