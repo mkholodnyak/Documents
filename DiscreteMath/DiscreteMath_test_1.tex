@@ -28,267 +28,278 @@
 \begin{document}
 
 \begin{titlepage}
-\newpage
-
-\begin{center}
-{\large НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ \\
-«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ» 							\\
-Дисциплина: «Дискретная математика. Алгоритмический подход.»}
-
-\vfill % заполняет длину страницы вертикально
-
-{\large Домашнее задание 1}
-
-\bigskip
-
-
-{\large \underline{Функции алгебры логики}}\\
-Вариант 1
-
-\vfill
-
-\begin{flushright}
-Выполнил: Холодняк М.В.,\\
-студент группы 174ПИ.\medskip \\
-Преподаватель: Броневич А.Г.
-\end{flushright}
-
-\vfill
-
-Москва \number\year \\
-\LaTeX
-
-\end{center}
+	\newpage
+	
+	\begin{center}
+		{\large НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ \\
+			«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ» 							\\
+		Дисциплина: «Дискретная математика. Алгоритмический подход.»}
+		
+		\vfill % заполняет длину страницы вертикально
+		
+		{\large Домашнее задание 1}
+		
+		\bigskip
+		
+		
+		{\large \underline{Функции алгебры логики}}\\
+		Вариант 1
+		
+		\vfill
+		
+		\begin{flushright}
+			Выполнил: Холодняк М.В.,\\
+			студент группы 174ПИ.\medskip \\
+			Преподаватель: Броневич А.Г.
+		\end{flushright}
+		
+		\vfill
+		
+		Москва \number\year \\
+		\LaTeX
+		
+	\end{center}
 \end{titlepage}
 
 \newpage
 
 \begin{center}
-Задание 1.\\
+	Задание 1.\\
 \end{center}
 
 \begin{flushleft}
-\begin{multicols}{2}
-\begin{tabular}{ | c | c | c | c |}
-\hline
-X & Y & Z & $(x \implies y) \wedge z \implies (x \vee y)$ \\
-\hline
-0 & 0 & 0 & 1 \\
-\hline
-0 & 0 & 1 & 0 \\ 
-\hline
-0 & 1 & 0 & 1 \\
-\hline
-0 & 1 & 1 & 1 \\
-\hline
-1 & 0 & 0 & 1 \\
-\hline
-1 & 0 & 1 & 1 \\
-\hline
-1 & 1 & 0 & 1 \\
-\hline
-1 & 1 & 1 & 1 \\
-\hline
-\end{tabular} \\
-
-\begin{tabular}{ | c | c | c | c |}
-\hline
-X & Y & Z & $((x \oplus y) \wedge z \implies (z \vee y)) \equiv (x \vee y)$ \\
-\hline
-0 & 0 & 0 & 0 \\
-\hline
-0 & 0 & 1 & 0 \\ 
-\hline
-0 & 1 & 0 & 1 \\
-\hline
-0 & 1 & 1 & 1 \\
-\hline
-1 & 0 & 0 & 1 \\
-\hline
-1 & 0 & 1 & 1 \\
-\hline
-1 & 1 & 0 & 1 \\
-\hline
-1 & 1 & 1 & 1 \\
-\hline
-\end{tabular} \\
-\end{multicols}
-\bigskip
-
-\begin{center}
-\begin{tabular}{ | c | c | c | c |}
-\hline
-X & Y & Z & $\overline{(x \oplus y) \wedge ((x \equiv y) \implies z) \vee y}$ \\
-\hline
-0 & 0 & 0 & 1 \\
-\hline
-0 & 0 & 1 & 1 \\ 
-\hline
-0 & 1 & 0 & 0 \\
-\hline
-0 & 1 & 1 & 0 \\
-\hline
-1 & 0 & 0 & 0 \\
-\hline
-1 & 0 & 1 & 0 \\
-\hline
-1 & 1 & 0 & 0 \\
-\hline
-1 & 1 & 1 & 0 \\
-\hline
-\end{tabular} \\
-\end{center}
-
-Функция $F_1(X,Y,Z)$ ложна при $F_1(0,0,1)$\\
-Функция $F_2(X,Y,Z)$ ложна при $F_2(0,0,0), F_2(0,0,1)$\\
-Функция $F_3(X,Y,Z)$ ложна при $F_3(0,1,0), F_3(0,1,1), F_3(1,0,0), F_3(1,0,1), F_3(1,1,0), F_3(1,1,1)$\\
-
+	\begin{multicols}{2}
+		\begin{tabular}{ | c | c | c | c |}
+			\hline
+			X & Y & Z & $(x \implies y) \wedge z \implies (x \vee y)$ \\
+			\hline
+			0 & 0 & 0 & 1                                             \\
+			\hline
+			0 & 0 & 1 & 0                                             \\ 
+			\hline
+			0 & 1 & 0 & 1                                             \\
+			\hline
+			0 & 1 & 1 & 1                                             \\
+			\hline
+			1 & 0 & 0 & 1                                             \\
+			\hline
+			1 & 0 & 1 & 1                                             \\
+			\hline
+			1 & 1 & 0 & 1                                             \\
+			\hline
+			1 & 1 & 1 & 1                                             \\
+			\hline
+		\end{tabular} \\
+		
+		\begin{tabular}{ | c | c | c | c |}
+			\hline
+			X & Y & Z & $((x \oplus y) \wedge z \implies (z \vee y)) \equiv (x \vee y)$ \\
+			\hline
+			0 & 0 & 0 & 0                                                               \\
+			\hline
+			0 & 0 & 1 & 0                                                               \\ 
+			\hline
+			0 & 1 & 0 & 1                                                               \\
+			\hline
+			0 & 1 & 1 & 1                                                               \\
+			\hline
+			1 & 0 & 0 & 1                                                               \\
+			\hline
+			1 & 0 & 1 & 1                                                               \\
+			\hline
+			1 & 1 & 0 & 1                                                               \\
+			\hline
+			1 & 1 & 1 & 1                                                               \\
+			\hline
+		\end{tabular} \\
+	\end{multicols}
+	\bigskip
+	
+	\begin{center}
+		\begin{tabular}{ | c | c | c | c |}
+			\hline
+			X & Y & Z & $\overline{(x \oplus y) \wedge ((x \equiv y) \implies z) \vee y}$ \\
+			\hline
+			0 & 0 & 0 & 1                                                                 \\
+			\hline
+			0 & 0 & 1 & 1                                                                 \\ 
+			\hline
+			0 & 1 & 0 & 0                                                                 \\
+			\hline
+			0 & 1 & 1 & 0                                                                 \\
+			\hline
+			1 & 0 & 0 & 0                                                                 \\
+			\hline
+			1 & 0 & 1 & 0                                                                 \\
+			\hline
+			1 & 1 & 0 & 0                                                                 \\
+			\hline
+			1 & 1 & 1 & 0                                                                 \\
+			\hline
+		\end{tabular} \\
+	\end{center}
+	
+	Функция $F_1(X,Y,Z)$ ложна при $F_1(0,0,1)$\\
+	Функция $F_2(X,Y,Z)$ ложна при $F_2(0,0,0), F_2(0,0,1)$\\
+	Функция $F_3(X,Y,Z)$ ложна при $F_3(0,1,0), F_3(0,1,1), F_3(1,0,0), F_3(1,0,1), F_3(1,1,0), F_3(1,1,1)$\\
+	
 \end{flushleft}
 
 \bigskip
 
 \newpage
 \begin{center}
-Задание  2.\\
+	Задание  2.\\
 \end{center}
 
 \begin{flushleft}
-
-
+	
+	
 \end{flushleft}
 
 \bigskip
 
 
 \begin{center}
-Задание 3.
+	Задание 3.
 \end{center}
 
 \begin{flushleft}
-Дизъюнтивные нормальные формы:\\
-$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
-$F_2(X,Y,Z)=\overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
-$F_3(X,Y,Z)=\overline{XYZ} \vee \overline{XY}Z$\\
-\bigskip
-Конъюктивные нормальные формы:\\
-$F_1(X,Y,Z)=X \vee Y \vee \overline{Z}$\\
-$F_2(X,Y,Z)=(X\vee Y\vee Z)(X\vee Y\vee\overline{Z})$\\
-$F_3(X,Y,Z)=(X\vee \overline{Y}\vee Z)(X \vee \overline{Y} \vee \overline{Z})(\overline{X} \vee Y \vee Z)(\overline{X} \vee Y \vee \overline{Z})(\overline{X} \vee \overline{Y} \vee Z)(\overline{X} \vee \overline{Y} \vee \overline{Z})$\\
+	Дизъюнтивные нормальные формы:\\
+	$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
+	$F_2(X,Y,Z)=\overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
+	$F_3(X,Y,Z)=\overline{XYZ} \vee \overline{XY}Z$\\
+	\bigskip
+	Конъюктивные нормальные формы:\\
+	$F_1(X,Y,Z)=X \vee Y \vee \overline{Z}$\\
+	$F_2(X,Y,Z)=(X\vee Y\vee Z)(X\vee Y\vee\overline{Z})$\\
+	$F_3(X,Y,Z)=(X\vee \overline{Y}\vee Z)(X \vee \overline{Y} \vee \overline{Z})(\overline{X} \vee Y \vee Z)(\overline{X} \vee Y \vee \overline{Z})(\overline{X} \vee \overline{Y} \vee Z)(\overline{X} \vee \overline{Y} \vee \overline{Z})$\\
 \end{flushleft}
 
 \bigskip
 
 
 \begin{center}
-Задание 4.\\
+	Задание 4.\\
 \end{center}
 
 \begin{flushleft}
-Полиномы Жегалкина:\\
-$F_1(X,Y,Z)=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$\\
-$F_2(X,Y,Z)=Y \oplus X \oplus XY$\\
-$F_3(X,Y,Z)=1 \oplus Y \oplus X \oplus XY$\\
+	Полиномы Жегалкина:\\
+	$F_1(X,Y,Z)=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$\\
+	$F_2(X,Y,Z)=Y \oplus X \oplus XY$\\
+	$F_3(X,Y,Z)=1 \oplus Y \oplus X \oplus XY$\\
 \end{flushleft}
 
 \bigskip
 
 \begin{center}
-Задание 5.\\
+	Задание 5.\\
 \end{center}
 
 \begin{flushleft}
-
+	Всего существует 16 функций, принадлежащих классу самодвойственных, но лишь 10 из них
+	существенно зависят от трех переменных x,y,z.\\
+	$F_{23}(X,Y,Z)=(\overline{X}YZ) \vee (X\overline{Y}C) \vee (XY\overline{C}) \vee (XYC)$\\
+	$F_{232}(X,Y,Z)=(\overline{XYZ}) \vee (\overline{XY}Z) \vee (\overline{X}Y\overline{Z}) \vee (X\overline{YZ})$\\
+	$F_{43}(X,Y,Z)=(\overline{X}Y\overline{Z}) \vee (X\overline{YZ}) \vee (XY\overline{Z}) \vee (XYZ)$\\
+	$F_{212}(X,Y,Z)=(\overline{XYZ}) \vee (\overline{XY}Z) \vee (\overline{X}YZ) \vee (X\overline{Y}Z)$\\
+	$F_{77}(X,Y,Z)=(\overline{XY}Z) \vee (X\overline{YZ}) \vee (X\overline{Y}Z) \vee (XYZ)$\\
+	$F_{178}(X,Y,Z)=(\overline{XYZ}) \vee (\overline{X}Y\overline{Z}) \vee (\overline{X}YZ) \vee (XY\overline{Z})$\\
+	$F_{105}(X,Y,Z)=(\overline{XY}Z) \vee (\overline{X}Y\overline{Z}) \vee (X\overline{YZ})\vee (XYZ)$\\
+	$F_{150}(X,Y,Z)=(\overline{XYZ}) \vee (\overline{X}YZ) \vee (X\overline{Y}Z) \vee (XY\overline{Z})$\\
+	$F_{113}(X,Y,Z)=(\overline{AB}C) \vee (\overline{A}B\overline{C}) \vee (\overline{A}BC) \vee (ABC)$\\
+	$F_{142}(X,Y,Z)=(\overline{ABC}) \vee (A\overline{BC}) \vee (A\overline{B}C) \vee (AB\overline{C})$\\
 \end{flushleft}
 
 \bigskip
 
 \begin{center}
-Задание 6.\\
+	Задание 6.\\
 \end{center}
 
 \begin{flushleft}
-
+	
 \end{flushleft}
 
 \bigskip
 
 \begin{center}
-Задание 7.\\
+	Задание 7.\\
 \end{center}
 
 \begin{flushleft}
-Условие двойственности функций:\\
-Функция $f^{*}(x_1, \ldots , x_n)$ называется \textbf{двойственной} к функции $f(x_1, \ldots , x_n)$,\\
-если $f^{*}(x_1, \ldots , x_n) = \overline{f}(\overline{x_1}, \ldots , \overline{x_n})$\\
-\bigskip
-$f=(A \vee B) \wedge (A \vee C) \wedge (B \vee D) \wedge (C \vee D)$\\
-$g= (A \vee D) \wedge (B \vee C)$\\
-Согласно принципу двойственности имеем:\\
-$f^{*}= AB \vee AC \vee BD \vee CD = A(B \vee C) \vee D(B \vee C) = (A\vee D)(B \vee C)$\\
-$f^{*} = g$\\
-Следовательно, функции являются двойственными.
+	Условие двойственности функций:\\
+	Функция $f^{*}(x_1, \ldots , x_n)$ называется \textbf{двойственной} к функции $f(x_1, \ldots , x_n)$,\\
+	если $f^{*}(x_1, \ldots , x_n) = \overline{f}(\overline{x_1}, \ldots , \overline{x_n})$\\
+	\bigskip
+	$f=(A \vee B) \wedge (A \vee C) \wedge (B \vee D) \wedge (C \vee D)$\\
+	$g= (A \vee D) \wedge (B \vee C)$\\
+	Согласно принципу двойственности имеем:\\
+	$f^{*}= AB \vee AC \vee BD \vee CD = A(B \vee C) \vee D(B \vee C) = (A\vee D)(B \vee C)$\\
+	$f^{*} = g$\\
+	Следовательно, функции являются двойственными.
 \end{flushleft}
 
 \bigskip
 
 \begin{center}
-Задание 8.\\
+	Задание 8.\\
 \end{center}
 
 \begin{flushleft}
-Для начала реализуем функцию нахождения наибольшего числа из двух чисел:\\
-$F(X,Y)=X \oplus ((X \oplus Y) \wedge (\overline{X \leftarrow Y}) $\\
-Далее, с помощью суперпозиции зададим новую функцию:\\
-$G(X,Y,Z) = F(F(X,Y),Z)$\\
-Это и будет искомой булевой функцией.
-
+	Для начала реализуем функцию нахождения наибольшего числа из двух чисел:\\
+	$F(X,Y)=X \oplus ((X \oplus Y) \wedge (\overline{X \leftarrow Y}) $\\
+	Далее, с помощью суперпозиции зададим новую функцию:\\
+	$G(X,Y,Z) = F(F(X,Y),Z)$\\
+	Это и будет искомой булевой функцией.
+	
 \end{flushleft}
 
 \bigskip
 
 \begin{center}
-Задание 9.\\
+	Задание 9.\\
 \end{center}
 
 \begin{flushleft}
-Воспользуемся критерием Поста.
-\begin{multicols}{2}
-$F_1\notin{T_0}, \text{т.к.}\; F_1(0,0,0)=1 $ \\
-$F_1 \in{T_1},\text{т.к.}\; F_1(1,1,1)=1 $ \\
-$F_1 \notin{T_\leq}, \text{т.к.}\; F_1(0,0,0)>F_1(0,0,1) $ \\
-$F_1 \notin{T_*}, \text{т.к.}\; F_1(1,1,1)=F_1(0,0,0) = 1 $ \\
-$F_1 \notin{T_L}, \text{т.к.}\; F_1=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$ \\
-\bigskip
-$F_2 \in{T_0}, \text{т.к.}\; F_2(0,0,0)=0 $ \\
-$F_2 \in{T_1},\text{т.к.}\; F_2(1,1,1)=1 $ \\
-$F_3 \in{T_\leq}$ \\
-$F_2 \notin{T_*}, \text{т.к.}\; F_2(0,1,0)=F_2(1,0,1) = 1 $ \\
-$F_2 \notin{T_L}, \text{т.к.}\; F_2=Y \oplus X \oplus XY $ \\
-\end{multicols}
-\bigskip
-$F_3 \notin{T_0}, \text{т.к.}\; F_3(0,0,0)=1 $ \\
-$F_3 \notin{T_1},\text{т.к.}\; F_1(1,1,1)=0 $ \\
-$F_3 \notin{T_\leq}, \text{т.к.}\; F_3(0,0,0)>F_3(0,1,0) $ \\
-$F_3 \notin{T_*}, \text{т.к.}\; F(0,1,0)=F(1,0,1) = 0 $ \\
-$F_3 \notin{T_L}, \text{т.к.}\; F=1 \oplus Y \oplus X \oplus XY$ \\
-
-Построим таблицу Поста:\\
-\bigskip
-\begin{tabular}{| c | c | c | c | c | c |}
-\hline
- & $T_0$ & $T_1$ & $T_\leq$ & $T_*$ & $T_L$ \\
- \hline
- $F_1 $& $+$ & $+$ & $-$ & $-$ & $-$\\
- \hline
- $F_2$ & $+$ & $+$ & $+$ & $-$ & $-$\\
- \hline
- $F_3$ & $-$ & $-$ & $-$ & $-$ & $-$\\
- \hline
-\end{tabular}\\
-\bigskip
-Согласно критерию Поста, чтобы система функций была полна, необходимо и достаточно, чтобы в кажом столбце таблицы Поста был хотя бы один минус.\\
-Следовательно, система функций полна.\\
-
-\textbf{\color{red}{Сделать базисы}}
+	Воспользуемся критерием Поста.
+	\begin{multicols}{2}
+		$F_1\notin{T_0}, \text{т.к.}\; F_1(0,0,0)=1 $ \\
+		$F_1 \in{T_1},\text{т.к.}\; F_1(1,1,1)=1 $ \\
+		$F_1 \notin{T_\leq}, \text{т.к.}\; F_1(0,0,0)>F_1(0,0,1) $ \\
+		$F_1 \notin{T_*}, \text{т.к.}\; F_1(1,1,1)=F_1(0,0,0) = 1 $ \\
+		$F_1 \notin{T_L}, \text{т.к.}\; F_1=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$ \\
+		\bigskip
+		$F_2 \in{T_0}, \text{т.к.}\; F_2(0,0,0)=0 $ \\
+		$F_2 \in{T_1},\text{т.к.}\; F_2(1,1,1)=1 $ \\
+		$F_3 \in{T_\leq}$ \\
+		$F_2 \notin{T_*}, \text{т.к.}\; F_2(0,1,0)=F_2(1,0,1) = 1 $ \\
+		$F_2 \notin{T_L}, \text{т.к.}\; F_2=Y \oplus X \oplus XY $ \\
+	\end{multicols}
+	\bigskip
+	$F_3 \notin{T_0}, \text{т.к.}\; F_3(0,0,0)=1 $ \\
+	$F_3 \notin{T_1},\text{т.к.}\; F_1(1,1,1)=0 $ \\
+	$F_3 \notin{T_\leq}, \text{т.к.}\; F_3(0,0,0)>F_3(0,1,0) $ \\
+	$F_3 \notin{T_*}, \text{т.к.}\; F(0,1,0)=F(1,0,1) = 0 $ \\
+	$F_3 \notin{T_L}, \text{т.к.}\; F=1 \oplus Y \oplus X \oplus XY$ \\
+	
+	Построим таблицу Поста:\\
+	\bigskip
+	\begin{tabular}{| c | c | c | c | c | c |}
+		\hline
+		       & $T_0$ & $T_1$ & $T_\leq$ & $T_*$ & $T_L$ \\
+		\hline
+		$F_1 $ & $+$   & $+$   & $-$      & $-$   & $-$   \\
+		\hline
+		$F_2$  & $+$   & $+$   & $+$      & $-$   & $-$   \\
+		\hline
+		$F_3$  & $-$   & $-$   & $-$      & $-$   & $-$   \\
+		\hline
+	\end{tabular}\\
+	\bigskip
+	Согласно критерию Поста, чтобы система функций была полна, необходимо и достаточно, чтобы в кажом столбце таблицы Поста был хотя бы один минус.\\
+	Следовательно, система функций полна.\\
+	
+	\textbf{\color{red}{Сделать базисы}}
 \end{flushleft}
 \end{document}
