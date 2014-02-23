@@ -40,7 +40,8 @@
 
 \bigskip
 
-\underline{Функции алгебры логики}\\
+
+{\large \underline{Функции алгебры логики}}\\
 Вариант 1
 
 \vfill
@@ -66,6 +67,76 @@
 \end{center}
 
 \begin{flushleft}
+\begin{multicols}{2}
+\begin{tabular}{ | c | c | c | c |}
+\hline
+X & Y & Z & $(x \implies y) \wedge z \implies (x \vee y)$ \\
+\hline
+0 & 0 & 0 & 1 \\
+\hline
+0 & 0 & 1 & 0 \\ 
+\hline
+0 & 1 & 0 & 1 \\
+\hline
+0 & 1 & 1 & 1 \\
+\hline
+1 & 0 & 0 & 1 \\
+\hline
+1 & 0 & 1 & 1 \\
+\hline
+1 & 1 & 0 & 1 \\
+\hline
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular} \\
+
+\begin{tabular}{ | c | c | c | c |}
+\hline
+X & Y & Z & $((x \oplus y) \wedge z \implies (z \vee y)) \equiv (x \vee y)$ \\
+\hline
+0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 1 & 0 \\ 
+\hline
+0 & 1 & 0 & 1 \\
+\hline
+0 & 1 & 1 & 1 \\
+\hline
+1 & 0 & 0 & 1 \\
+\hline
+1 & 0 & 1 & 1 \\
+\hline
+1 & 1 & 0 & 1 \\
+\hline
+1 & 1 & 1 & 1 \\
+\hline
+\end{tabular} \\
+\end{multicols}
+\bigskip
+
+\begin{center}
+\begin{tabular}{ | c | c | c | c |}
+\hline
+X & Y & Z & $\overline{(x \oplus y) \wedge ((x \equiv y) \implies z) \vee y}$ \\
+\hline
+0 & 0 & 0 & 1 \\
+\hline
+0 & 0 & 1 & 1 \\ 
+\hline
+0 & 1 & 0 & 0 \\
+\hline
+0 & 1 & 1 & 0 \\
+\hline
+1 & 0 & 0 & 0 \\
+\hline
+1 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 0 \\
+\hline
+1 & 1 & 1 & 0 \\
+\hline
+\end{tabular} \\
+\end{center}
 
 Функция $F_1(X,Y,Z)$ ложна при $F_1(0,0,1)$\\
 Функция $F_2(X,Y,Z)$ ложна при $F_2(0,0,0), F_2(0,0,1)$\\
@@ -93,12 +164,12 @@
 \end{center}
 
 \begin{flushleft}
-Дизъюнтивная нормальная форма:\\
-$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
+Дизъюнтивные нормальные формы:\\
+$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\bar{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
 $F_2(X,Y,Z)=\overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
 $F_3(X,Y,Z)=\overline{XYZ} \vee \overline{XY}Z$\\
 \bigskip
-Конъюктивная нормальная форма:\\
+Конъюктивные нормальные формы:\\
 $F_1(X,Y,Z)=X \vee Y \vee \overline{Z}$\\
 $F_2(X,Y,Z)=(X\vee Y\vee Z)(X\vee Y\vee\overline{Z})$\\
 $F_3(X,Y,Z)=(X\vee \overline{Y}\vee Z)(X \vee \overline{Y} \vee \overline{Z})(\overline{X} \vee Y \vee Z)(\overline{X} \vee Y \vee \overline{Z})(\overline{X} \vee \overline{Y} \vee Z)(\overline{X} \vee \overline{Y} \vee \overline{Z})$\\
@@ -145,7 +216,16 @@ $F_3(X,Y,Z)=1 \oplus Y \oplus X \oplus XY$\\
 \end{center}
 
 \begin{flushleft}
-
+Условие двойственности функций:\\
+Функция $f^{*}(x_1, \ldots , x_n)$ называется \textbf{двойственной} к функции $f(x_1, \ldots , x_n)$,\\
+если $f^{*}(x_1, \ldots , x_n) = \overline{f}(\overline{x_1}, \ldots , \overline{x_n})$\\
+\bigskip
+$f=(A \vee B) \wedge (A \vee C) \wedge (B \vee D) \wedge (C \vee D)$\\
+$g= (A \vee D) \wedge (B \vee C)$\\
+Согласно принципу двойственности имеем:\\
+$f^{*}= AB \vee AC \vee BD \vee CD = A(B \vee C) \vee D(B \vee C) = (A\vee D)(B \vee C)$\\
+$f^{*} = g$\\
+Следовательно, функции являются двойственными.
 \end{flushleft}
 
 \bigskip
