@@ -1,0 +1,466 @@
+\documentclass[a4paper,12pt]{report} % формат бумаги А4, шрифт по умолчанию - 12pt
+
+% заметь, что в квадратных скобках вводятся необязательные аргументы пакетов.
+% а в фигурных - обязательные
+
+\usepackage[T2A]{fontenc} % поддержка кириллицы в Латехе
+\usepackage[utf8]{inputenc} % включаю кодировку ютф8
+\usepackage[english,russian]{babel} % использую русский и английский языки с переносами
+
+\usepackage{indentfirst} % делать отступ в начале параграфа
+\usepackage{amsmath} % математические штуковины
+\usepackage{mathtools} % еще математические штуковины
+\usepackage{mathtext}
+\usepackage{multicol} % подключаю мультиколоночность в тексте
+\usepackage{graphicx} % пакет для вставки графики, я хз нахуя он нужен в этом документе
+\usepackage{listings} % пакет для вставки кода
+
+
+\usepackage{geometry} % меняю поля страницы
+
+%из параметров ниже понятно, какие части полей страницы меняются:
+\geometry{left=2.5cm}
+\geometry{right=1cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\renewcommand{\baselinestretch}{1} % меняю ширину между строками на 1.5
+\righthyphenmin=2
+\begin{document}
+
+\begin{titlepage}
+\newpage
+
+\begin{center}
+{\large НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ \\
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ» 							\\
+Дисциплина: «Информатика, математическая логика и теория алгоритмов»}
+
+\vfill % заполняет длину страницы вертикально
+
+{\large Домашнее задание 1}
+
+\bigskip
+
+\underline{Исследование комбинационных схем}\\
+Вариант 113
+
+\vfill
+
+\begin{flushright}
+Выполнил: Холодняк Максим,\\
+студент группы 174ПИ.\medskip \\
+Преподаватель: Авдошин С.М.,\\
+профессор кафедры УРПО \\
+отделения программной инженерии \\
+факультета бизнес-информатики \\
+\end{flushright}
+
+\vfill
+
+Москва \number\year
+
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\begin{center}
+№1.\\
+\end{center}
+
+
+\begin{flushleft}
+$252X_7 + 135X_6 +232X_5+114X_4 +79X_3+242X_2+224X_1+49X_0 = 40$ \\
+Переведём коэффициенты уравнения в двоичную систему счисления.
+
+$252_2 = 1111\,1100$ , $135_2 = 1000\,0111$ , $232_2 = 1110\,1000$ , $114_2 = 0111\, 0010$,\\
+$79_2 = 0100\,1111$ , $242_2 = 1111\, 0010$ , $224_2 = 1110\,0000$ , $49_2 = 0011\, 0001$ , $40_2 = 0010\,1000$.\\
+
+Составим расширенную матрицу коэффициентов соответствующей системы линейных уравнений в GF(2) и решим систему. \\
+
+\bigskip
+\bigskip
+
+% определяю новую матрицу с чертой
+\newenvironment{amatrix}[1]{
+	\left(\begin{array}{@{}*{#1}{c}|c@{}}
+	}{
+	\end{array}\right)
+	}
+%
+\scriptsize{
+$	\begin{smallmatrix}
+\, & \,
+	\end{smallmatrix}
+$
+$\begin{amatrix}{8}
+\fbox{1}&1&1&0&0&1&1&0&0\\
+1&0&1&1&1&1&1&0&0\\
+1&0&1&1&0&1&1&1&1\\
+1&0&0&1&0&1&0&1&0\\
+1&0&1&0&1&0&0&0&1\\
+1&1&0&0&1&0&0&0&0\\
+0&1&0&1&1&1&0&0&0\\
+0&1&0&0&1&0&0&1&0\\
+\end{amatrix}$
+$	\begin{matrix}
+	(2)\oplus=(1)\\
+	(3)\oplus=(1)\\
+	(4)\oplus=(1)\\
+	(5)\oplus=(1)\\
+	(6)\oplus=(1)\\
+	\sim
+	\end{matrix}
+$
+$
+\begin{amatrix}{8}
+1&1&1&0&0&1&1&0&0\\
+0&\fbox{1}&0&1&1&0&0&0&0\\
+0&1&0&1&0&0&0&1&1\\
+0&1&1&1&0&0&1&1&0\\
+0&1&0&0&1&1&1&0&1\\
+0&0&1&0&1&1&1&0&0\\
+0&1&0&1&1&1&0&0&0\\
+0&1&0&0&1&0&0&1&0
+\end{amatrix}$
+$	\begin{matrix}
+	(1)\oplus=(2)\\
+	(3)\oplus=(2)\\
+	(4)\oplus=(2)\\
+	(5)\oplus=(2)\\
+	(7)\oplus=(2)\\
+	(8)\oplus=(2)\\
+	\sim
+	\end{matrix}
+$
+\\
+\bigskip
+$	\begin{matrix}
+	\sim
+	\end{matrix}
+$
+$\begin{amatrix}{8}
+1&0&1&1&1&1&1&0&0\\
+0&1&0&1&1&0&0&0&0\\
+0&0&0&0&1&0&0&1&1\\
+0&0&\fbox{1}&0&1&0&1&1&0\\
+0&0&0&1&0&1&1&0&1\\
+0&0&1&0&1&1&1&0&0\\
+0&0&0&0&0&1&0&0&0\\
+0&0&0&1&0&0&0&1&0\\
+\end{amatrix}$
+$	\begin{matrix}
+	(1)\oplus=(4)\\
+	(6)\oplus=(4)\\
+	\sim
+	\end{matrix}
+$
+$\begin{amatrix}{8}
+1&0&0&1&0&1&0&1&0\\
+0&1&0&1&1&0&0&0&0\\
+0&0&0&0&1&0&0&1&1\\
+0&0&1&0&1&0&1&1&0\\
+0&0&0&\fbox{1}&0&1&1&0&1\\
+0&0&0&0&0&1&0&1&0\\
+0&0&0&0&0&1&0&0&0\\
+0&0&0&1&0&0&0&1&0
+\end{amatrix}$
+$	\begin{matrix}
+	(1)\oplus=(5)\\
+	(2)\oplus=(5)\\
+	(8)\oplus=(5)\\
+	\sim
+	\end{matrix}
+$
+\\
+\bigskip
+$	\begin{matrix}
+	\sim
+	\end{matrix}
+$
+$\begin{amatrix}{8}
+1&0&0&0&0&0&1&1&1\\
+0&1&0&0&1&1&1&0&1\\
+0&0&0&0&\fbox{1}&0&0&1&1\\
+0&0&1&0&1&0&1&1&0\\
+0&0&0&1&0&1&1&0&1\\
+0&0&0&0&0&1&0&1&0\\
+0&0&0&0&0&1&0&0&0\\
+0&0&0&0&0&1&1&1&1
+\end{amatrix}$
+$	\begin{matrix}
+	(2)\oplus=(3)\\
+	(4)\oplus=(3)\\
+	\sim
+	\end{matrix}
+$
+$\begin{amatrix}{8}
+1&0&0&0&0&0&1&1&1\\
+0&1&0&0&0&1&1&1&0\\
+0&0&0&0&1&0&0&1&1\\
+0&0&1&0&0&0&1&0&1\\
+0&0&0&1&0&1&1&0&1\\
+0&0&0&0&0&\fbox{1}&0&1&0\\
+0&0&0&0&0&1&0&0&0\\
+0&0&0&0&0&1&1&1&1
+\end{amatrix}$
+$	\begin{matrix}
+	(2)\oplus=(6)\\
+	(5)\oplus=(6)\\
+	(7)\oplus=(6)\\
+	(8)\oplus=(6)\\
+	\sim
+	\end{matrix}
+$
+\\
+\bigskip
+$	\begin{matrix}
+	\sim
+	\end{matrix}
+$
+$\begin{amatrix}{8}
+1&0&0&0&0&0&1&1&1\\
+0&1&0&0&0&0&1&0&0\\
+0&0&0&0&1&0&0&1&1\\
+0&0&1&0&0&0&1&0&1\\
+0&0&0&1&0&0&1&1&1\\
+0&0&0&0&0&1&0&1&0\\
+0&0&0&0&0&0&0&1&0\\
+0&0&0&0&0&0&\fbox{1}&0&1
+\end{amatrix}$
+$	\begin{matrix}
+	(1)\oplus=(8)\\
+	(2)\oplus=(8)\\
+	(4)\oplus=(8)\\
+	(5)\oplus=(8)\\
+	\sim
+	\end{matrix}
+$
+$\begin{amatrix}{8}
+1&0&0&0&0&0&0&1&0\\
+0&1&0&0&0&0&0&0&1\\
+0&0&0&0&1&0&0&1&1\\
+0&0&1&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&1&0\\
+0&0&0&0&0&1&0&1&0\\
+0&0&0&0&0&0&0&\fbox{1}&0\\
+0&0&0&0&0&0&1&0&1
+\end{amatrix}$
+$	\begin{matrix}
+	(1)\oplus=(7)\\
+	(3)\oplus=(7)\\
+	(5)\oplus=(7)\\
+	(6)\oplus=(7)\\
+	\sim
+	\end{matrix}
+$
+\\
+\bigskip
+$	\begin{matrix}
+	\sim
+	\end{matrix}
+$
+$\begin{amatrix}{8}
+1&0&0&0&0&0&0&0&0\\
+0&1&0&0&0&0&0&0&1\\
+0&0&0&0&1&0&0&0&1\\
+0&0&1&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&0&0\\
+0&0&0&0&0&1&0&0&0\\
+0&0&0&0&0&0&0&1&0\\
+0&0&0&0&0&0&1&0&1
+\end{amatrix}$
+
+}
+\end{flushleft}
+
+\bigskip
+
+\begin{flushleft}
+В описаниях преобразований строки обозначены как (1), (2), ..., (8), а выражение $ (i)\oplus{=(j)} $ обозначает «заменить все числа в строке ($i$) на их сумму по модулю $2$ с соответствующими числами строки ($j$)». \\
+Получаем решение: $X_7$ = 0, $X_6$ = 1, $X_5$ = 0, $X_4$ = 0, $X_3$ = 1, $X_2$ = 0, $X_1$ = 1, $X_0$ = 0. 
+\end{flushleft}
+
+\newpage
+\begin{flushleft}
+Составим таблицу истинности функции F. \\
+
+\bigskip
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+A &0 &0 &0 &0 &1 &1 &1 &1 \\
+\hline
+B &0 &0 &1 &1 &0 &0 &1 &1 \\
+\hline
+C &0 &1 &0 &1 &0 &1 &0 &1 \\
+\hline
+F &0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+\hline
+\end{tabular}
+\\
+\bigskip
+
+Десятичный номер функции F равен $2^1 + 2^3 + 2^6 = 74$.
+\end{flushleft}
+
+\begin{multicols}{2}
+
+
+
+\bigskip
+\centering
+№4.\\
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+A &0 &0 &0 &0 &1 &1 &1 &1 \\
+\hline
+B &0 &0 &1 &1 &0 &0 &1 &1 \\
+\hline
+C &0 &1 &0 &1 &0 &1 &0 &1 \\
+\hline
+F &0 & 1 & 0 & 0 & 1 &0&1&0 \\
+\hline
+$F_A^{\prime}$ &1&1&1&0&1&1&1&0\\
+\hline
+$F_B^{\prime}$ &0&1&0&1&0&0&0&0\\
+\hline
+$F_C^{\prime}$ & 1&1&0&0&1&1&1&1\\
+\hline
+$F_{A,B}^{\prime\prime}$ &0&1&0&1&0&1&0&1\\
+\hline
+$F_{B,C}^{\prime\prime}$ &1&1&1&1&0&0&0&0\\
+\hline
+$F_{A,C}^{\prime\prime}$ &0&0&1&1&0&0&1&1\\
+\hline
+$F_{A,B,C}^{\prime\prime\prime}$ &1&1&1&1&1&1&1&1\\
+
+\hline
+\end{tabular}\\
+\bigskip
+
+№6.\\
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+A &0 &0 &0 &0 &1 &1 &1 &1 \\
+\hline
+B &0 &0 &1 &1 &0 &0 &1 &1 \\
+\hline
+C &0 &1 &0 &1 &0 &1 &0 &1 \\
+\hline
+F &0 & 1 & 0 & 0 & 1 &0&1&0 \\
+\hline
+$F_{(A,B)}^{\prime}$ & 1&1&1&0&1&0&1&1\\
+\hline
+$F_{(B,C)}^{\prime}$ & 0&1&1&0&1&1&1&1\\
+\hline
+$F_{(A,C)}^{\prime}$ & 0&0&0&1&0&0&1&0\\
+\hline
+\end{tabular}
+\\
+\bigskip
+№8.\\
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+A &0 &0 &0 &0 &1 &1 &1 &1 \\
+\hline
+B &0 &0 &1 &1 &0 &0 &1 &1 \\
+\hline
+C &0 &1 &0 &1 &0 &1 &0 &1 \\
+\hline
+F &0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+\hline
+$F_{(A,B,C)}^{\prime}$ & 0&0&0&1&1&0&0&0\\
+\hline
+\end{tabular}\\
+\bigskip
+\columnbreak
+№5. \\
+% РЕШЕНО
+\bigskip
+$ F_A^{\prime} = \overline{BC} $ \\
+$ F_B^{\prime} = \overline{A}C $ \\
+$ F_C^{\prime} = (B \Rightarrow A $) \\
+$ F_{A,B}^{\prime\prime} =  C$ \\
+$ F_{B,C}^{\prime\prime} =  \overline{A}$ \\
+$ F_{A,C}^{\prime\prime} =  B$ \\
+$ F_{A,B,C}^{\prime\prime\prime} = 1 $ \\
+\bigskip
+\bigskip
+№7. \\
+% Решено
+\bigskip
+$ F_{(A,B)}^{\prime} =  (C \Rightarrow (A \equiv B))$ \\
+$ F_{(B,C)}^{\prime} =  (B \equiv C) \Rightarrow A$ \\
+$ F_{(A,C)}^{\prime} = B(A \oplus C)$ \\
+\bigskip
+\bigskip
+№9. \\
+% Решено
+\bigskip
+$ F_{(A,B,C)}^{\prime} = (\overline{A} \equiv B \equiv C) $ \\
+\end{multicols}
+
+\newpage
+\begin{center}
+№10.
+\end{center}
+\begin{flushleft}
+$ F(A,B,C)  = A \oplus C \oplus BC \oplus ABC$ 
+\end{flushleft}
+\bigskip
+\begin{center}
+№11.
+\end{center}
+$ (0,0,0): F(A,B,C) = A \oplus C \oplus BC \oplus ABC$  \\
+$ (0,0,1): F(A,B,C) = 1 \oplus A \oplus B \oplus (C\oplus 1)\oplus AB \oplus B(C\oplus 1) \oplus AB(C\oplus1) $ \\
+$ (0,1,0): F(A,B,C) = A \oplus (B\oplus 1)C \oplus AC \oplus A(B\oplus 1)C$ \\
+$ (0,1,1): F(A,B,C) = (B\oplus 1) \oplus A(B \oplus 1) \oplus (B \oplus 1)(C \oplus 1) \oplus A(C \oplus 1) \oplus A(B\oplus 1)(C \oplus 1) $ \\
+$ (1,0,0): F(A,B,C) = 1 \oplus (A \oplus 1) \oplus C \oplus (A \oplus 1)BC $ \\
+$ (1,0,1): F(A,B,C) = (A \oplus 1) \oplus (C \oplus 1) \oplus (A \oplus 1)B \oplus (A \oplus 1)B(C \oplus 1) $ \\
+$ (1,1,0): F(A,B,C) = 1 \oplus (A \oplus 1) \oplus C \oplus (A \oplus 1)C \oplus (A \oplus 1)(B \oplus 1)C$\\
+$ (1,1,1): F(A,B,C) = (C \oplus 1) \oplus (A \oplus 1)(B \oplus 1)\oplus (A \oplus 1)(C \oplus 1) \oplus (A \oplus 1)(B \oplus 1)(C \oplus 1) $ \\
+\begin{center} 
+№12.  
+% Решено
+\end{center} 
+\begin{flushleft}
+$ F(A,B,C) = 0 \equiv (A \equiv 0) \equiv (C \equiv 0) \equiv ((B \equiv 0)+(C \equiv 0)) \equiv ((A \equiv 0)+(B \equiv 0) + (C \equiv 0))$ \\
+\end{flushleft}
+\begin{center} 
+№13.  
+% Решено
+\end{center} 
+\begin{flushleft}
+$ (0,0,0): F(A,B,C) = 0 \equiv (A \equiv 0) \equiv (C \equiv 0) \equiv ((B \equiv 0)+(C \equiv 0)) \equiv ((A \equiv 0)+(B \equiv 0) + (C \equiv 0))$ \\
+$ (0,0,1): F(A,B,C) = (A \equiv 0) \equiv (B \equiv 0) \equiv C \equiv ((A \equiv 0)+(B \equiv 0)) \equiv ((B \equiv 0)+ C) \equiv((A \equiv 0) + (B \equiv 0) + C) $ \\
+$ (0,1,0): F(A,B,C) = 0 \equiv (A \equiv 0) \equiv (B + (C \equiv 0)) \equiv ((A \equiv 0) + (C \equiv 0)) \equiv ((A \equiv 0) + B + (C \equiv 0))$ \\
+$ (0,1,1): F(A,B,C) = 0 \equiv B \equiv ((A \equiv 0)+B)\equiv (B + C)\equiv((A \equiv 0) + C) \equiv ((A \equiv 0)+B+C)$ \\
+$ (1,0,0): F(A,B,C) = A \equiv (C \equiv 0) \equiv (A + (B \equiv 0)+ (C \equiv 0))$ \\
+$ (1,0,1): F(A,B,C) =0 \equiv A \equiv C \equiv(A + (B \equiv 0)) \equiv (A + (B \equiv 0)+C)$ \\
+$ (1,1,0): F(A,B,C) = A \equiv (C \equiv 0) \equiv (A + (C \equiv0)) \equiv (A + B+(C \equiv 0))$ \\
+$ (1,1,1): F(A,B,C) = 0 \equiv C \equiv (A+ B)\equiv (A \equiv C) \equiv (A+B+C)$ \\
+\end{flushleft}
+\begin{center} 
+№14.  
+% Решено
+\end{center}
+\begin{flushleft}
+$F \in{T_0}, \text{т.к.}\; F(0,0,0)=0 $ \\
+$F \notin{T_1},\text{т.к.}\; F(1,1,1)=0 $ \\
+$F \notin{T_\leq}, \text{т.к.}\; F(0,0,1)>F(0,1,0) $ \\
+$F \notin{T_*}, \text{т.к.}\; F(1,1,1)=F(0,0,0) = 0 $ \\
+$F \notin{T_L}, \text{т.к.}\; F(0,0,0)= A \oplus C \oplus BC \oplus ABC $ \\
+\end{flushleft}
+\begin{center} 
+№15.  
+\end{center}
+$0=F(A,A,A)$\\
+$A\oplus B = F(A,A,B)$\\
+$A = F(A, A, F(A,A,A))$\\
+$B = F(F(A,A,A),F(A,A,A),B)$\\
+\end{document}
