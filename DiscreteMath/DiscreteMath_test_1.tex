@@ -9,8 +9,9 @@
 \usepackage{mathtools} % еще математические штуковины
 \usepackage{mathtext}
 \usepackage{multicol} % подключаю мультиколоночность в тексте
-\usepackage{graphicx} % пакет для вставки графики, я хз зачем он нужен в этом документе
+\usepackage{graphicx} % пакет для вставки графики, я хз нахуя он нужен в этом документе
 \usepackage{listings} % пакет для вставки кода
+\usepackage{color} % позволяет использовать в тексте цвет
 
 
 \usepackage{geometry} % меняю поля страницы
@@ -146,7 +147,7 @@ X & Y & Z & $\overline{(x \oplus y) \wedge ((x \equiv y) \implies z) \vee y}$ \\
 
 \bigskip
 
-
+\newpage
 \begin{center}
 Задание  2.\\
 \end{center}
@@ -158,14 +159,14 @@ X & Y & Z & $\overline{(x \oplus y) \wedge ((x \equiv y) \implies z) \vee y}$ \\
 
 \bigskip
 
-       
+
 \begin{center}
 Задание 3.
 \end{center}
 
 \begin{flushleft}
 Дизъюнтивные нормальные формы:\\
-$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\bar{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
+$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
 $F_2(X,Y,Z)=\overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
 $F_3(X,Y,Z)=\overline{XYZ} \vee \overline{XY}Z$\\
 \bigskip
@@ -235,6 +236,11 @@ $f^{*} = g$\\
 \end{center}
 
 \begin{flushleft}
+Для начала реализуем функцию нахождения наибольшего числа из двух чисел:\\
+$F(X,Y)=X \oplus ((X \oplus Y) \wedge (\overline{X \leftarrow Y}) $\\
+Далее, с помощью суперпозиции зададим новую функцию:\\
+$G(X,Y,Z) = F(F(X,Y),Z)$\\
+Это и будет искомой булевой функцией.
 
 \end{flushleft}
 
@@ -245,6 +251,44 @@ $f^{*} = g$\\
 \end{center}
 
 \begin{flushleft}
+Воспользуемся критерием Поста.
+\begin{multicols}{2}
+$F_1\notin{T_0}, \text{т.к.}\; F_1(0,0,0)=1 $ \\
+$F_1 \in{T_1},\text{т.к.}\; F_1(1,1,1)=1 $ \\
+$F_1 \notin{T_\leq}, \text{т.к.}\; F_1(0,0,0)>F_1(0,0,1) $ \\
+$F_1 \notin{T_*}, \text{т.к.}\; F_1(1,1,1)=F_1(0,0,0) = 1 $ \\
+$F_1 \notin{T_L}, \text{т.к.}\; F_1=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$ \\
+\bigskip
+$F_2 \in{T_0}, \text{т.к.}\; F_2(0,0,0)=0 $ \\
+$F_2 \in{T_1},\text{т.к.}\; F_2(1,1,1)=1 $ \\
+$F_3 \in{T_\leq}$ \\
+$F_2 \notin{T_*}, \text{т.к.}\; F_2(0,1,0)=F_2(1,0,1) = 1 $ \\
+$F_2 \notin{T_L}, \text{т.к.}\; F_2=Y \oplus X \oplus XY $ \\
+\end{multicols}
+\bigskip
+$F_3 \notin{T_0}, \text{т.к.}\; F_3(0,0,0)=1 $ \\
+$F_3 \notin{T_1},\text{т.к.}\; F_1(1,1,1)=0 $ \\
+$F_3 \notin{T_\leq}, \text{т.к.}\; F_3(0,0,0)>F_3(0,1,0) $ \\
+$F_3 \notin{T_*}, \text{т.к.}\; F(0,1,0)=F(1,0,1) = 0 $ \\
+$F_3 \notin{T_L}, \text{т.к.}\; F=1 \oplus Y \oplus X \oplus XY$ \\
 
+Построим таблицу Поста:\\
+\bigskip
+\begin{tabular}{| c | c | c | c | c | c |}
+\hline
+ & $T_0$ & $T_1$ & $T_\leq$ & $T_*$ & $T_L$ \\
+ \hline
+ $F_1 $& $+$ & $+$ & $-$ & $-$ & $-$\\
+ \hline
+ $F_2$ & $+$ & $+$ & $+$ & $-$ & $-$\\
+ \hline
+ $F_3$ & $-$ & $-$ & $-$ & $-$ & $-$\\
+ \hline
+\end{tabular}\\
+\bigskip
+Согласно критерию Поста, чтобы система функций была полна, необходимо и достаточно, чтобы в кажом столбце таблицы Поста был хотя бы один минус.\\
+Следовательно, система функций полна.\\
+
+\textbf{\color{red}{Сделать базисы}}
 \end{flushleft}
 \end{document}
