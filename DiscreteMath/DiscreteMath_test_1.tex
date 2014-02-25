@@ -151,7 +151,7 @@
 \begin{center}
 	Задание  2.\\
 \end{center}
-
+	
 \begin{flushleft}
 	
 	
@@ -165,15 +165,24 @@
 \end{center}
 
 \begin{flushleft}
-	Дизъюнтивные нормальные формы:\\
+	Соверешенные дизъюнтивные нормальные формы:\\
 	$F_1(X,Y,Z)=\overline{XYZ} \vee \overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
 	$F_2(X,Y,Z)=\overline{X}Y\overline{Z} \vee \overline{X}YZ \vee X\overline{YZ} \vee X\overline{Y}Z \vee XY\overline{Z} \vee XYZ$\\
 	$F_3(X,Y,Z)=\overline{XYZ} \vee \overline{XY}Z$\\
 	\bigskip
-	Конъюктивные нормальные формы:\\
+	Совершенные конъюктивные нормальные формы:\\
 	$F_1(X,Y,Z)=X \vee Y \vee \overline{Z}$\\
 	$F_2(X,Y,Z)=(X\vee Y\vee Z)(X\vee Y\vee\overline{Z})$\\
 	$F_3(X,Y,Z)=(X\vee \overline{Y}\vee Z)(X \vee \overline{Y} \vee \overline{Z})(\overline{X} \vee Y \vee Z)(\overline{X} \vee Y \vee \overline{Z})(\overline{X} \vee \overline{Y} \vee Z)(\overline{X} \vee \overline{Y} \vee \overline{Z})$\\
+	Из них, путём упрощения выведем ДНФ и КНФ:\\
+	Дизъюнтивные нормальные формы:\\
+	$F_1 = X + Y + \overline{Z}$\\
+	$F_2 = X + Y$\\
+	$F_3 = \overline{XY}$\\
+	Конъюктивные нормальные формы:\\
+	$F_1 = X + Y + \overline{Z}$\\
+	$F_2 = X + Y$\\
+	$F_3 = \overline{XY}$\\
 \end{flushleft}
 
 \bigskip
@@ -199,6 +208,15 @@
 \begin{flushleft}
 	Всего существует 16 функций, принадлежащих классу самодвойственных, но лишь 10 из них
 	существенно зависят от трех переменных x,y,z.\\
+	\bigskip
+	
+	\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c |}
+	\hline
+	X & Y & Z & $F_{23}$ & $F_{43}$ & $F_{77}$ & $F_{105}$ & $F_{142}$ & $F_{150}$ & $F_{178}$ & $F_{212}$ & $F_{232}$ & $F_{}$\\
+	\hline
+	\end{tabular}
+	\bigskip
+	
 	$F_{23}(X,Y,Z)=(\overline{X}YZ) \vee (X\overline{Y}C) \vee (XY\overline{C}) \vee (XYC)$\\
 	$F_{232}(X,Y,Z)=(\overline{XYZ}) \vee (\overline{XY}Z) \vee (\overline{X}Y\overline{Z}) \vee (X\overline{YZ})$\\
 	$F_{43}(X,Y,Z)=(\overline{X}Y\overline{Z}) \vee (X\overline{YZ}) \vee (XY\overline{Z}) \vee (XYZ)$\\
@@ -207,8 +225,8 @@
 	$F_{178}(X,Y,Z)=(\overline{XYZ}) \vee (\overline{X}Y\overline{Z}) \vee (\overline{X}YZ) \vee (XY\overline{Z})$\\
 	$F_{105}(X,Y,Z)=(\overline{XY}Z) \vee (\overline{X}Y\overline{Z}) \vee (X\overline{YZ})\vee (XYZ)$\\
 	$F_{150}(X,Y,Z)=(\overline{XYZ}) \vee (\overline{X}YZ) \vee (X\overline{Y}Z) \vee (XY\overline{Z})$\\
-	$F_{113}(X,Y,Z)=(\overline{AB}C) \vee (\overline{A}B\overline{C}) \vee (\overline{A}BC) \vee (ABC)$\\
-	$F_{142}(X,Y,Z)=(\overline{ABC}) \vee (A\overline{BC}) \vee (A\overline{B}C) \vee (AB\overline{C})$\\
+	$F_{113}(X,Y,Z)=(\overline{XY}Z) \vee (\overline{X}Y\overline{Z}) \vee (\overline{X}YZ) \vee (XYZ)$\\
+	$F_{142}(X,Y,Z)=(\overline{XYZ}) \vee (X\overline{YZ}) \vee (X\overline{Y}Z) \vee (XY\overline{Z})$\\
 \end{flushleft}
 
 \bigskip
@@ -216,9 +234,50 @@
 \begin{center}
 	Задание 6.\\
 \end{center}
-
 \begin{flushleft}
+
+	Условие существования тождественно истинной $F(A(Y,Z)Y,Z)$:\\
+	Для всех наборов $F(X_n,Y_n,Z_n) = 0 $ должен существовать набор $F(\overline{X_n},Y_n,Z_n) = 1$.\\
+	Первая функция:\\
+	$F_1 = 0$ при $F_1(0,0,1)$ и $F_1 = 1$ при $F_1(1,0,1)$. Достаточно найти такие $A(Y,Z)$ чтобы на наборе $A(0,1)$
+	функция была равна 1.\\
+	\bigskip
+	\begin{tabular}{| c | c | c | c | c | c | c | c | c | c |}
+	\hline
+	Y & Z & $F_4$ & $F_5$ & $F_6$ & $F_7$ & $F_{12}$ & $F_{13}$ & $F_{14}$ & $F_{15}$\\
+	\hline
+	0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1\\
+	\hline
+	0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\
+	\hline
+	1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1\\
+	\hline
+	1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1\\
+	\hline
+	\end{tabular}
+	\bigskip
 	
+	Вторая функция:\\
+	$F_2 = 0$ при $F_2(0,0,0)$ и $F_2(0,0,1)$. $F_2 = 1$ при $F_2(1,0,0)$ и $F_2(1,0,1)$. Достаточно найти такие
+	$A(Y,Z)$ чтобы на наборах $A(0,0)$ и $A(0,1)$ функция была равна 1.\\
+	\bigskip
+	\begin{tabular}{| c | c | c | c | c | c |}
+	\hline
+	Y & Z & $F_{12}$ & $F_{13}$ & $F_{14}$ & $F_{15}$\\
+	\hline
+	0 & 0 & 1 & 1 & 1 & 1\\
+	\hline
+	0 & 1 & 1 & 1 & 1 & 1\\
+	\hline
+	1 & 0 & 0 & 0 & 1 & 1\\
+	\hline
+	1 & 1 & 0 & 1 & 0 & 1\\
+	\hline
+	\end{tabular}
+	\bigskip
+
+	Третья функция:\\
+	Существют такие пары наборов $F(X_n,Y_n,Z_n)$ и $F(\overline{X_n},Y_n,Z_n)$, на которых функция равна нулю и не завист от X $\implies$ не существует функции $A(Y,Z)$ на которых бы $F_3(A(Y,Z)Y,Z)$ была бы тождественно истинна.\\
 \end{flushleft}
 
 \bigskip
@@ -280,8 +339,8 @@
 	$F_3 \notin{T_0}, \text{т.к.}\; F_3(0,0,0)=1 $ \\
 	$F_3 \notin{T_1},\text{т.к.}\; F_1(1,1,1)=0 $ \\
 	$F_3 \notin{T_\leq}, \text{т.к.}\; F_3(0,0,0)>F_3(0,1,0) $ \\
-	$F_3 \notin{T_*}, \text{т.к.}\; F(0,1,0)=F(1,0,1) = 0 $ \\
-	$F_3 \notin{T_L}, \text{т.к.}\; F=1 \oplus Y \oplus X \oplus XY$ \\
+	$F_3 \notin{T_*}, \text{т.к.}\; F_3(0,1,0)=F_3(1,0,1) = 0 $ \\
+	$F_3 \notin{T_L}, \text{т.к.}\; F_3=1 \oplus Y \oplus X \oplus XY$ \\
 	
 	Построим таблицу Поста:\\
 	\bigskip
@@ -289,7 +348,7 @@
 		\hline
 		       & $T_0$ & $T_1$ & $T_\leq$ & $T_*$ & $T_L$ \\
 		\hline
-		$F_1 $ & $+$   & $+$   & $-$      & $-$   & $-$   \\
+		$F_1 $ & $-$   & $+$   & $-$      & $-$   & $-$   \\
 		\hline
 		$F_2$  & $+$   & $+$   & $+$      & $-$   & $-$   \\
 		\hline
@@ -300,6 +359,8 @@
 	Согласно критерию Поста, чтобы система функций была полна, необходимо и достаточно, чтобы в кажом столбце таблицы Поста был хотя бы один минус.\\
 	Следовательно, система функций полна.\\
 	
-	\textbf{\color{red}{Сделать базисы}}
+	Базисы:\\
+	\{$F_3$\}\\
+	Остальные возможные подсистемы \{$F_1, F_2, F_3$\} или содержат $F_3$(а она сама по себе является полной), или неполные $\implies$ не являются базисами. Т.к. базис является полной системой и не содержит полных подсистем(из определения).
 \end{flushleft}
 \end{document}
