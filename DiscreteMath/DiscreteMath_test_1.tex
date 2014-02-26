@@ -201,18 +201,35 @@
 
 \bigskip
 
+\newpage
 \begin{center}
 	Задание 5.\\
 \end{center}
 
 \begin{flushleft}
-	Всего существует 16 функций, принадлежащих классу самодвойственных, но лишь 10 из них
-	существенно зависят от трех переменных x,y,z.\\
+	Всего существует 16 функций от трёх переменных, принадлежащих классу самодвойственных, но лишь 10 из них
+	существенно зависят от трех переменных X,Y,Z.\\
 	\bigskip
 	
 	\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c |}
 	\hline
-	X & Y & Z & $F_{23}$ & $F_{43}$ & $F_{77}$ & $F_{105}$ & $F_{142}$ & $F_{150}$ & $F_{178}$ & $F_{212}$ & $F_{232}$ & $F_{}$\\
+	X & Y & Z & $F_{23}$ & $F_{43}$ & $F_{77}$ & $F_{105}$ & $F_{113}$ & $F_{142}$ & $F_{150}$ & $F_{178}$ & $F_{212}$ & $F_{232}$\\
+	\hline
+	0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1\\
+	\hline
+	0 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1\\
+	\hline
+	0 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 & 1\\
+	\hline
+	0 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 0\\
+	\hline
+	1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1\\
+	\hline
+	1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 0\\
+	\hline
+	1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0\\
+	\hline
+	1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0\\
 	\hline
 	\end{tabular}
 	\bigskip
@@ -294,7 +311,11 @@
 	$f=(A \vee B) \wedge (A \vee C) \wedge (B \vee D) \wedge (C \vee D)$\\
 	$g= (A \vee D) \wedge (B \vee C)$\\
 	Согласно принципу двойственности имеем:\\
-	$f^{*}= AB \vee AC \vee BD \vee CD = A(B \vee C) \vee D(B \vee C) = (A\vee D)(B \vee C)$\\
+	%$f^{*}= AB \vee AC \vee BD \vee CD = A(B \vee C) \vee D(B \vee C) = (A\vee D)(B \vee C)$\\
+	$f^{*} = \overline{(\overline{A} \vee \overline{B}) \wedge (\overline{A} \vee \overline{C}) \wedge 
+	(\overline{B} \vee \overline{D}) \wedge (\overline{C} \vee \overline{D})} = 
+	\overline{\overline{AB} \wedge \overline{AC} \wedge \overline{BD} \wedge \overline{CD}} =$\\
+	$ = AB \vee AC \vee BD \vee CD = A(B \vee C) \vee D(C \vee D) = (A \vee D) \wedge (B \vee C)$\\
 	$f^{*} = g$\\
 	Следовательно, функции являются двойственными.
 \end{flushleft}
@@ -325,28 +346,28 @@
 	\begin{multicols}{2}
 		$F_1\notin{T_0}, \text{т.к.}\; F_1(0,0,0)=1 $ \\
 		$F_1 \in{T_1},\text{т.к.}\; F_1(1,1,1)=1 $ \\
-		$F_1 \notin{T_\leq}, \text{т.к.}\; F_1(0,0,0)>F_1(0,0,1) $ \\
-		$F_1 \notin{T_*}, \text{т.к.}\; F_1(1,1,1)=F_1(0,0,0) = 1 $ \\
-		$F_1 \notin{T_L}, \text{т.к.}\; F_1=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$ \\
+		$F_1 \notin{M}, \text{т.к.}\; F_1(0,0,0)>F_1(0,0,1) $ \\
+		$F_1 \notin{S}, \text{т.к.}\; F_1(1,1,1)=F_1(0,0,0) = 1 $ \\
+		$F_1 \notin{L}, \text{т.к.}\; F_1=1 \oplus Z \oplus YZ \oplus XZ \oplus XYZ$ \\
 		\bigskip
 		$F_2 \in{T_0}, \text{т.к.}\; F_2(0,0,0)=0 $ \\
 		$F_2 \in{T_1},\text{т.к.}\; F_2(1,1,1)=1 $ \\
-		$F_3 \in{T_\leq}$ \\
-		$F_2 \notin{T_*}, \text{т.к.}\; F_2(0,1,0)=F_2(1,0,1) = 1 $ \\
-		$F_2 \notin{T_L}, \text{т.к.}\; F_2=Y \oplus X \oplus XY $ \\
+		$F_3 \in{M}$\\
+		$F_2 \notin{S}, \text{т.к.}\; F_2(0,1,0)=F_2(1,0,1) = 1 $ \\
+		$F_2 \notin{L}, \text{т.к.}\; F_2=Y \oplus X \oplus XY $ \\
 	\end{multicols}
 	\bigskip
 	$F_3 \notin{T_0}, \text{т.к.}\; F_3(0,0,0)=1 $ \\
 	$F_3 \notin{T_1},\text{т.к.}\; F_1(1,1,1)=0 $ \\
-	$F_3 \notin{T_\leq}, \text{т.к.}\; F_3(0,0,0)>F_3(0,1,0) $ \\
-	$F_3 \notin{T_*}, \text{т.к.}\; F_3(0,1,0)=F_3(1,0,1) = 0 $ \\
-	$F_3 \notin{T_L}, \text{т.к.}\; F_3=1 \oplus Y \oplus X \oplus XY$ \\
+	$F_3 \notin{M}, \text{т.к.}\; F_3(0,0,0)>F_3(0,1,0) $ \\
+	$F_3 \notin{S}, \text{т.к.}\; F_3(0,1,0)=F_3(1,0,1) = 0 $ \\
+	$F_3 \notin{L}, \text{т.к.}\; F_3=1 \oplus Y \oplus X \oplus XY$ \\
 	
 	Построим таблицу Поста:\\
 	\bigskip
 	\begin{tabular}{| c | c | c | c | c | c |}
 		\hline
-		       & $T_0$ & $T_1$ & $T_\leq$ & $T_*$ & $T_L$ \\
+		       & $T_0$ & $T_1$ & $M$ & $S$ & $L$ \\
 		\hline
 		$F_1 $ & $-$   & $+$   & $-$      & $-$   & $-$   \\
 		\hline
